@@ -18,6 +18,6 @@ use Wink\WinkPost;
 Route::get('/', 'HomeController@index')->name('homepage');
 
 Route::get('/posts', 'PostController@index')->name('posts.all');
-Route::get('/posts/{winkPost:slug}/read', 'PostController@show')->name('posts.read');
+Route::get('/posts/{slug}', 'PostController@show')->name('posts.read');
 
-Route::get('/tags/{winkTag:slug}/all', 'TagController@index')->name('tags.all');
+Route::get('/posts/tags/{winkTag:slug}', 'TagController@index')->name('tags.all');

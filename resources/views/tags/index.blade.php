@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Hello my friend | Semua Tag')
+@section('title', 'Daeng Blog | Semua Tag')
 
 <!-- Title detail post -->
 @section('welcome')
 <div class="lg:w-full text-center">
-    <div class="text-gray-300 lg:text-4xl font-medium p-20">
-        <p class="hover:underline">Tags: {{ $winkTag->name }}</p>
+    <div class="text-gray-700 text-3xl p-6 md:p-10 lg:text-4xl font-medium lg:p-12">
+        <p>Postingan dengan tag {{ $winkTag->name }}</p>
     </div>
 </div>
 <!-- End title detail post -->
@@ -14,9 +14,8 @@
 
 <!-- Blog -->
 @section('content')
-@forelse($winkTag->posts as $post)
-@if($post->liveToRead())
-<div class="p-4 lg:w-1/3">
+@forelse($winkPost as $post)
+<div class="p-2 md:w-1/2 lg:w-1/3">
     <div class="h-full bg-white bg-opacity-90 px-8 pt-8 p-6 tracking-wide rounded-lg shadow-sm overflow-hidden relative">
         <a href="{{ route('posts.read', $post->slug) }}" class="title-font sm:text-2xl text-xl -m-1 mb-3 font-medium text-gray-900 hover:text-gray-600">
             {{Str::limit($post->title, 55)}}
@@ -24,7 +23,7 @@
         <div>
             <span class="text-gray-400 text-xs">{{ date('F j, o', strtotime($post->publish_date)) }}</span>
             <span class="text-gray-400">.</span>
-            <span class="text-gray-400 text-xs">{{ $post->readingTime($post->body) }}</span>
+            <span class="text-gray-400 text-xs">{{ Post::readingTime($post->body) }}</span>
         </div>
         <div class="flex -m-1">
             @foreach($post->tags as $tag)
@@ -41,7 +40,6 @@
         </div>
     </div>
 </div>
-@endif
 
 @empty
 <div class="w-18 mx-auto bg-blue-500 text-white">

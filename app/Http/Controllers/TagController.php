@@ -9,6 +9,8 @@ class TagController extends Controller
 {
     public function index(WinkTag $winkTag)
     {
-        return view('tags.index', compact('winkTag'));
+        $winkPost = $winkTag->posts()->live()->get();
+
+        return view('tags.index', compact('winkTag', 'winkPost'));
     }
 }
