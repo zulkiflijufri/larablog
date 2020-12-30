@@ -15,7 +15,7 @@ use Wink\WinkPost;
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('homepage');
 
 Route::get('/posts', 'PostController@index')->name('posts.all');
 Route::get('/posts/{winkPost:slug}/read', 'PostController@show')->name('posts.read');

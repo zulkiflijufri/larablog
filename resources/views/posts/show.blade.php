@@ -35,6 +35,9 @@
             @endforeach
         </div>
     </div>
+    <div class="bg-white bg-opacity-90 mt-4 px-8 py-8 rounded-lg overflow-hidden">
+        @include('posts.comments', ['slug' => $winkPost->slug])
+    </div>
 </div>
 <div class="mt-4 w-2/6">
     <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-sm">
