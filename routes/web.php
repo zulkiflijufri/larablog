@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Wink\WinkPage;
-use Wink\WinkPost;
 
 /*
 |--------------------------------------------------------------------------
