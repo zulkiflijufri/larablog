@@ -25,9 +25,9 @@
     </div>
     <div class="bg-white mt-10 mb-10 lg:flex p-5 rounded">
         <div class="lg:w-1/6 mb-3">
-            <img src="/img/profil.jpg" class="rounded-full mx-auto">
+            <img src="/img/profil.jpg" class="rounded-full mx-auto w-1/4 sm:w-2/12 md:w-1/6 lg:w-10/12">
         </div>
-        <div class="lg:pl-5 leading-relaxed text-center lg:text-left w-full lg:w-5/6">
+        <div class="lg:pl-5 leading-relaxed tracking-wide text-center lg:text-left w-full lg:w-5/6">
             <span class="font-bold">{{ $winkPost->author->name }}</span>
             <div class="text-md text-justify">
                 <p>{!! $winkPost->author->bio !!}</p>

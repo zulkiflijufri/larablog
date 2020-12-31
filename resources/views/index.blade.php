@@ -81,11 +81,13 @@
     </div>
 </div>
 @endforelse
+@if($winkPosts->total() > 6)
 <div class="my-6 mx-auto">
     <a href="{{ route('posts.all') }}" class="text-blue-500 bg-blue-200 text-sm rounded p-2 transition duration-150 hover:text-blue-200 hover:bg-blue-400">
         Semua postingan
     </a>
 </div>
+@endif
 <!-- End blog -->
 </body>
 </html>
