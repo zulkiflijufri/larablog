@@ -48,7 +48,7 @@
             {{Str::limit($post->title, 55)}}
         </a>
         <div>
-            <span class="text-gray-400 text-xs">{{ date('F j, o', strtotime($post->publish_date)) }}</span>
+            <span class="text-gray-400 text-xs"> {{ $post->updated_at ? '[updated]' : '' }} {{ date('j F Y', strtotime($post->publish_date)) }}</span>
             <span class="text-gray-400">.</span>
             <span class="text-gray-400 text-xs">{{ Post::readingTime($post->body) }}</span>
         </div>
