@@ -4,17 +4,17 @@
 
 <!-- Blog -->
 @section('content')
-<div class="max-w-full lg:max-w-3xl mx-auto pt-2">
-    <div class="h-auto bg-white bg-opacity-90 px-8 pt-8 pb-6 rounded-lg overflow-hidden">
-        <h1 class="title-font sm:text-xl md:text-3xl lg:text-4xl mb-1 font-medium text-gray-900">
+<div class="max-w-full lg:max-w-3xl mx-auto md:pt-2">
+    <div class="h-auto bg-white bg-opacity-90 px-4 md:px-8 pt-8 pb-6 rounded-lg overflow-hidden">
+        <h1 class="title-font text-3xl lg:text-4xl mb-1 font-medium text-gray-900">
             {{ $winkPost->title }}
         </h1>
         <div>
-            <span class="text-gray-400 text-xs round">{{ date('j F o', strtotime($winkPost->publish_date)) }}</span>
+            <span class="text-gray-400 text-xs round">{{ date('j F Y', strtotime($winkPost->publish_date)) }}</span>
             <span class="text-gray-400">.</span>
             <span class="text-gray-400 text-xs">{{ Post::readingTime($winkPost->body) }}</span>
         </div>
-        <div class="sm:text-md lg:text-lg tracking-wide text-gray-500">
+        <div class="sm:text-md lg:text-lg tracking-wide text-gray-700">
             <p class="leading-relaxed mb-3">{!! $winkPost->body !!}</p>
         </div>
         <div class="flex -ml-1 mt-4">
@@ -25,11 +25,11 @@
     </div>
     <div class="bg-white mt-10 mb-10 lg:flex p-5 rounded">
         <div class="lg:w-1/6 mb-3">
-            <img src="/img/profil.jpg" class="rounded-full mx-auto w-1/4 sm:w-2/12 md:w-1/6 lg:w-10/12">
+            <img src="/img/profil.jpg" class="rounded-full mx-auto w-20 md:w-1/6 lg:w-10/12">
         </div>
-        <div class="lg:pl-5 leading-relaxed tracking-wide text-center lg:text-left w-full lg:w-5/6">
+        <div class="lg:pl-5 lg:pt-3 leading-relaxed tracking-wide text-center lg:text-left w-full lg:w-5/6">
             <span class="font-bold">{{ $winkPost->author->name }}</span>
-            <div class="text-md text-justify">
+            <div class="text-sm md:text-md lg:text-justify mt-1 md:mt-2 lg:mt-1">
                 <p>{!! $winkPost->author->bio !!}</p>
             </div>
         </div>

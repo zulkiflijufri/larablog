@@ -27,7 +27,7 @@
 </nav>
 
 <section>
-    <div class="container mx-auto px-10 md:px-16 lg:px-32 pt-12">
+    <div class="container mx-auto px-10 md:px-16 lg:px-32 pt-6 md:pt-12">
         @yield('welcome')
     </div>
 </section>
@@ -35,7 +35,7 @@
 <body class="bg-gray-100">
     <!-- Blog -->
     <section class="text-gray-600 body-font">
-        <div class="container px-10 md:px-16 lg:px-32 py-8 md:py-10 lg:py-12 mx-auto">
+        <div class="container px-10 md:px-16 lg:px-32 py-14 mx-auto">
             @if(request()->is('/'))
             <h2 class="text-gray-800 tracking-wide font-medium capitalize mb-5 text-center sm:text-center text-2xl md:text-3xl md:text-left">
                 Postingan Terbaru
